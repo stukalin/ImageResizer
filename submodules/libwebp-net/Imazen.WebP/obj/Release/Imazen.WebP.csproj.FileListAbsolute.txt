@@ -1,0 +1,6 @@
+C:\Users\nathanael\Documents\resizer\submodules\libwebp-net\Imazen.WebP\bin\Release\Imazen.WebP.XML
+C:\Users\nathanael\Documents\resizer\submodules\libwebp-net\Imazen.WebP\bin\Release\Imazen.WebP.dll
+C:\Users\nathanael\Documents\resizer\submodules\libwebp-net\Imazen.WebP\bin\Release\Imazen.WebP.pdb
+C:\Users\nathanael\Documents\resizer\submodules\libwebp-net\Imazen.WebP\obj\Release\Imazen.WebP.csprojResolveAssemblyReference.cache
+C:\Users\nathanael\Documents\resizer\submodules\libwebp-net\Imazen.WebP\obj\Release\Imazen.WebP.dll
+C:\Users\nathanael\Documents\resizer\submodules\libwebp-net\Imazen.WebP\obj\Release\Imazen.WebP.pdb

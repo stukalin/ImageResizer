@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ImageResizer.Plugins.MongoReader</name>
+    </assembly>
+    <members>
+        <member name="T:ImageResizer.Plugins.MongoReader.MongoReaderPlugin">
+            <summary>
+                An ImageResizer Plugin that retrieves images from a MongoDB/GridFS store
+            </summary>
+        </member>
+        <member name="M:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.#ctor(System.String,MongoDB.Driver.MongoDatabase,MongoDB.Driver.GridFS.MongoGridFSSettings)">
+            <summary>
+                Create a MongoReaderPlugin with an existing MongoDatabase and specific settings for GridFS
+            </summary>
+            <param name="prefix">The virtual folder representing GridFS assets</param>
+            <param name="db">An existing MongoDatabase instance</param>
+            <param name="gridSettings">
+                Settings for the GridFS connection
+                <see href="http://api.mongodb.org/csharp/1.8/html/7a3abd48-0532-8e7f-3c05-6c9812eb06f8.htm" />
+            </param>
+        </member>
+        <member name="M:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.#ctor(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+                Create a MongoReaderPlugin from plug-in arguments
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.Install(ImageResizer.Configuration.Config)">
+            <summary>
+                Install the MongoReader plugin
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.Uninstall(ImageResizer.Configuration.Config)">
+            <summary>
+                Uninstall the MongoReader plugin
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.RedactFrom(ImageResizer.Configuration.Xml.Node)">
+            <summary>
+                Removes connection string attributes for security
+            </summary>
+            <param name="resizer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.FileExists(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+                Checks if the virtual path has the same root as our virtual filesystem prefix
+            </summary>
+            <param name="virtualPath"></param>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.GetFile(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+                Returns a MongoVirtual file matching the path, or null if the path doesn't
+                fall in this virtual root.
+            </summary>
+            <param name="virtualPath"></param>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.GridFS">
+            <summary>
+                A reference to the GridFS instance used to retrieve files.
+            </summary>
+        </member>
+        <member name="P:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.VirtualFilesystemPrefix">
+            <summary>
+                Requests starting with this path will be handled by this virtual path provider. Should be in app-relative form: "~/gridfs/". Will be converted to root-relative form upon assigment. Trailing slash required, auto-added.
+            </summary>
+        </member>
+        <member name="T:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.MongoVirtualFile">
+            <summary>
+                Represents a file stored in GridFS and the requested resize settings
+            </summary>
+        </member>
+        <member name="F:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.MongoVirtualFile.Query">
+            <summary>
+                Resize settings from the query
+            </summary>
+        </member>
+        <member name="F:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.MongoVirtualFile._virtualPath">
+            <summary>
+                The files virtual path
+            </summary>
+        </member>
+        <member name="M:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.MongoVirtualFile.#ctor(ImageResizer.Plugins.MongoReader.MongoReaderPlugin,System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+                Creates a new MongoVirtualFile
+            </summary>
+            <param name="parent"></param>
+            <param name="virtualPath"></param>
+            <param name="query"></param>
+        </member>
+        <member name="M:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.MongoVirtualFile.Open">
+            <summary>
+                Locates and opens a GridFS file matching the filename. Using the files
+                id as opposed to its 'friendly' name will improve the response time
+            </summary>
+            <returns>A stream containing the requested file</returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.MongoVirtualFile.GetCacheKey(System.Boolean)">
+            <summary>
+                Returns the virtual folder cache-key
+            </summary>
+            <remarks>Ignores includeModifiedDate parameter</remarks>
+            <param name="includeModifiedDate"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ImageResizer.Plugins.MongoReader.MongoReaderPlugin.MongoVirtualFile.VirtualPath">
+            <summary>
+                The virtual path to a GridFS file
+            </summary>
+        </member>
+    </members>
+</doc>

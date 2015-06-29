@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 12.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="12.0">
+ <Namespaces>
+  <Namespace Name="ImageResizer.Plugins.PdfRenderer.Ghostscript">
+   <Messages>
+    <Message Id="Ghostscript" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Ghostscript' in namespace name 'ImageResizer.Plugins.PdfRenderer.Ghostscript'.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+ </Namespaces>
+ <Targets>
+  <Target Name="C:\Users\nathanael\Documents\resizer\dlls\release\ImageResizer.Plugins.PdfRenderer.dll">
+   <Modules>
+    <Module Name="imageresizer.plugins.pdfrenderer.dll">
+     <Messages>
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+       <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'ImageResizer.Plugins.PdfRenderer.dll' with a strong name key.</Issue>
+      </Message>
+      <Message TypeName="AttributeStringLiteralsShouldParseCorrectly" Category="Microsoft.Usage" CheckId="CA2243" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+       <Issue Certainty="75" Level="Warning">In the constructor of 'AssemblyInformationalVersionAttribute', change the value of argument 'informationalVersion', which is currently "3-4-3", to something that can be correctly parsed as 'Version'.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Mark 'ImageResizer.Plugins.PdfRenderer.dll' with CLSCompliant(true) because it exposes externally visible types.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+       <Issue Name="NoAttribute" Certainty="95" Level="CriticalError">Because 'ImageResizer.Plugins.PdfRenderer.dll' exposes externally visible types, mark it with ComVisible(false) at the assembly level and then mark all types within the assembly that should be exposed to COM clients with ComVisible(true).</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="ImageResizer.Plugins.PdfRenderer">
+       <Types>
+        <Type Name="PdfRendererPlugin" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#DecodeStream(System.IO.Stream,ImageResizer.ResizeSettings,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Users\nathanael\Documents\resizer\Contrib\PdfRenderer\PdfRenderer" File="PdfRenderer.cs" Line="153">In externally visible method 'PdfRendererPlugin.DecodeStream(Stream, ResizeSettings, string)', validate parameter 's' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetIssues()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ImageResizer.Configuration.Issues.Issue.#ctor(System.String,ImageResizer.Configuration.Issues.IssueSeverity)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Users\nathanael\Documents\resizer\Contrib\PdfRenderer\PdfRenderer" File="PdfRenderer.cs" Line="300">Method 'PdfRendererPlugin.GetIssues()' passes a literal string as parameter 'message' of a call to 'Issue.Issue(string, IssueSeverity)'. Retrieve the following string(s) from a resource table instead: "Ghostscript native library for this platform not found: ".</Issue>
+            </Message>
+            <Message Id="Ghostscript" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Users\nathanael\Documents\resizer\Contrib\PdfRenderer\PdfRenderer" File="PdfRenderer.cs" Line="300">Correct the spelling of the unrecognized token 'Ghostscript' in the literal '"Ghostscript native library for this platform not found: "'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="ImageResizer.Plugins.PdfRenderer.Ghostscript">
+       <Types>
+        <Type Name="GhostscriptArgument" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Ghostscript" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Ghostscript' in type name 'GhostscriptArgument'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#EpsCrop" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Eps" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Eps' in member name 'GhostscriptArgument.EpsCrop' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#EpsFitPage" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Eps" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Eps' in member name 'GhostscriptArgument.EpsFitPage' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="GhostscriptEngine" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Ghostscript" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Ghostscript' in type name 'GhostscriptEngine'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#HandleOutputMessage(System.Text.StringBuilder,System.IntPtr,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+             <Issue Certainty="33" Level="CriticalError" Path="c:\Users\nathanael\Documents\resizer\Contrib\PdfRenderer\PdfRenderer\Ghostscript" File="GhostscriptEngine.cs" Line="199">'GhostscriptEngine.HandleOutputMessage(StringBuilder, IntPtr, int)' calls into 'Marshal.Copy(IntPtr, byte[], int, int)' which has a LinkDemand. By making this call, 'Marshal.Copy(IntPtr, byte[], int, int)' is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: &#xD;&#xA;   -&gt;'GhostscriptEngine.HandleOutputMessage(StringBuilder, IntPtr, int)'&#xD;&#xA;   -&gt;'GhostscriptEngine.HandleOutputMessage(StringBuilder, IntPtr, int)'</Issue>
+            </Message>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="c:\Users\nathanael\Documents\resizer\Contrib\PdfRenderer\PdfRenderer\Ghostscript" File="GhostscriptEngine.cs" Line="199">The 'this' parameter (or 'Me' in Visual Basic) of 'GhostscriptEngine.HandleOutputMessage(StringBuilder, IntPtr, int)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Users\nathanael\Documents\resizer\Contrib\PdfRenderer\PdfRenderer\Ghostscript" File="GhostscriptEngine.cs" Line="222">In externally visible method 'GhostscriptEngine.HandleOutputMessage(StringBuilder, IntPtr, int)', validate parameter 'builder' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="GhostscriptEngine+GhostscriptNativeMethods" Kind="Class" Accessibility="Private" ExternallyVisible="False">
+         <Members>
+          <Member Name="#DeleteInstance32(System.IntPtr)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeSafeCriticalFxCopRule" Category="Microsoft.Security" CheckId="CA5122" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+             <Issue Certainty="50" Level="Warning">P/Invoke method 'GhostscriptEngine.GhostscriptNativeMethods.DeleteInstance32(IntPtr)' is marked safe-critical.  Since P/Invokes may only be called by critical code, this declaration should either be marked as security critical, or have its annotation removed entirely to avoid being misleading.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteInstance64(System.IntPtr)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeSafeCriticalFxCopRule" Category="Microsoft.Security" CheckId="CA5122" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+             <Issue Certainty="50" Level="Warning">P/Invoke method 'GhostscriptEngine.GhostscriptNativeMethods.DeleteInstance64(IntPtr)' is marked safe-critical.  Since P/Invokes may only be called by critical code, this declaration should either be marked as security critical, or have its annotation removed entirely to avoid being misleading.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Exit32(System.IntPtr)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeSafeCriticalFxCopRule" Category="Microsoft.Security" CheckId="CA5122" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+             <Issue Certainty="50" Level="Warning">P/Invoke method 'GhostscriptEngine.GhostscriptNativeMethods.Exit32(IntPtr)' is marked safe-critical.  Since P/Invokes may only be called by critical code, this declaration should either be marked as security critical, or have its annotation removed entirely to avoid being misleading.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Exit64(System.IntPtr)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeSafeCriticalFxCopRule" Category="Microsoft.Security" CheckId="CA5122" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+             <Issue Certainty="50" Level="Warning">P/Invoke method 'GhostscriptEngine.GhostscriptNativeMethods.Exit64(IntPtr)' is marked safe-critical.  Since P/Invokes may only be called by critical code, this declaration should either be marked as security critical, or have its annotation removed entirely to avoid being misleading.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetRevision32(ImageResizer.Plugins.PdfRenderer.Ghostscript.GhostscriptEngine+GhostscriptNativeMethods+GhostscriptVersion&amp;,System.Int32)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeSafeCriticalFxCopRule" Category="Microsoft.Security" CheckId="CA5122" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+             <Issue Certainty="50" Level="Warning">P/Invoke method 'GhostscriptEngine.GhostscriptNativeMethods.GetRevision32(ref GhostscriptEngine.GhostscriptNativeMethods.GhostscriptVersion, int)' is marked safe-critical.  Since P/Invokes may only be called by critical code, this declaration should either be marked as security critical, or have its annotation removed entirely to avoid being misleading.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetRevision64(ImageResizer.Plugins.PdfRenderer.Ghostscript.GhostscriptEngine+GhostscriptNativeMethods+GhostscriptVersion&amp;,System.Int32)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeSafeCriticalFxCopRule" Category="Microsoft.Security" CheckId="CA5122" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+             <Issue Certainty="50" Level="Warning">P/Invoke method 'GhostscriptEngine.GhostscriptNativeMethods.GetRevision64(ref GhostscriptEngine.GhostscriptNativeMethods.GhostscriptVersion, int)' is marked safe-critical.  Since P/Invokes may only be called by critical code, this declaration should either be marked as security critical, or have its annotation removed entirely to avoid being misleading.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeWithArguments32(System.IntPtr,System.Int32,System.String[])" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeSafeCriticalFxCopRule" Category="Microsoft.Security" CheckId="CA5122" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+             <Issue Certainty="50" Level="Warning">P/Invoke method 'GhostscriptEngine.GhostscriptNativeMethods.InitializeWithArguments32(IntPtr, int, string[])' is marked safe-critical.  Since P/Invokes may only be called by critical code, this declaration should either be marked as security critical, or have its annotation removed entirely to avoid being misleading.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeWithArguments64(System.IntPtr,System.Int32,System.String[])" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeSafeCriticalFxCopRule" Category="Microsoft.Security" CheckId="CA5122" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+             <Issue Certainty="50" Level="Warning">P/Invoke method 'GhostscriptEngine.GhostscriptNativeMethods.InitializeWithArguments64(IntPtr, int, string[])' is marked safe-critical.  Since P/Invokes may only be called by critical code, this declaration should either be marked as security critical, or have its annotation removed entirely to avoid being misleading.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#NewInstance32(System.IntPtr&amp;,System.IntPtr)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeSafeCriticalFxCopRule" Category="Microsoft.Security" CheckId="CA5122" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+             <Issue Certainty="50" Level="Warning">P/Invoke method 'GhostscriptEngine.GhostscriptNativeMethods.NewInstance32(out IntPtr, IntPtr)' is marked safe-critical.  Since P/Invokes may only be called by critical code, this declaration should either be marked as security critical, or have its annotation removed entirely to avoid being misleading.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#NewInstance64(System.IntPtr&amp;,System.IntPtr)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeSafeCriticalFxCopRule" Category="Microsoft.Security" CheckId="CA5122" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+             <Issue Certainty="50" Level="Warning">P/Invoke method 'GhostscriptEngine.GhostscriptNativeMethods.NewInstance64(out IntPtr, IntPtr)' is marked safe-critical.  Since P/Invokes may only be called by critical code, this declaration should either be marked as security critical, or have its annotation removed entirely to avoid being misleading.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SetMessageHandlers32(System.IntPtr,ImageResizer.Plugins.PdfRenderer.Ghostscript.GhostscriptEngine+GhostscriptMessageEventHandler,ImageResizer.Plugins.PdfRenderer.Ghostscript.GhostscriptEngine+GhostscriptMessageEventHandler,ImageResizer.Plugins.PdfRenderer.Ghostscript.GhostscriptEngine+GhostscriptMessageEventHandler)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeSafeCriticalFxCopRule" Category="Microsoft.Security" CheckId="CA5122" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+             <Issue Certainty="50" Level="Warning">P/Invoke method 'GhostscriptEngine.GhostscriptNativeMethods.SetMessageHandlers32(IntPtr, GhostscriptEngine.GhostscriptMessageEventHandler, GhostscriptEngine.GhostscriptMessageEventHandler, GhostscriptEngine.GhostscriptMessageEventHandler)' is marked safe-critical.  Since P/Invokes may only be called by critical code, this declaration should either be marked as security critical, or have its annotation removed entirely to avoid being misleading.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SetMessageHandlers64(System.IntPtr,ImageResizer.Plugins.PdfRenderer.Ghostscript.GhostscriptEngine+GhostscriptMessageEventHandler,ImageResizer.Plugins.PdfRenderer.Ghostscript.GhostscriptEngine+GhostscriptMessageEventHandler,ImageResizer.Plugins.PdfRenderer.Ghostscript.GhostscriptEngine+GhostscriptMessageEventHandler)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeSafeCriticalFxCopRule" Category="Microsoft.Security" CheckId="CA5122" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+             <Issue Certainty="50" Level="Warning">P/Invoke method 'GhostscriptEngine.GhostscriptNativeMethods.SetMessageHandlers64(IntPtr, GhostscriptEngine.GhostscriptMessageEventHandler, GhostscriptEngine.GhostscriptMessageEventHandler, GhostscriptEngine.GhostscriptMessageEventHandler)' is marked safe-critical.  Since P/Invokes may only be called by critical code, this declaration should either be marked as security critical, or have its annotation removed entirely to avoid being misleading.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="GhostscriptException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Ghostscript" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Ghostscript' in type name 'GhostscriptException'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="GhostscriptSettings" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="DependsOnFix">
+           <Issue Certainty="90" Level="Error">'GhostscriptSettings' is marked ComVisible(true) but has the following ComVisible(false) types in its object hierarchy: 'NameValueCollection', 'NameObjectCollectionBase'</Issue>
+          </Message>
+          <Message TypeName="ICollectionImplementationsHaveStronglyTypedMembers" Category="Microsoft.Design" CheckId="CA1035" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+           <Issue Certainty="90" Level="Error">'GhostscriptSettings' should provide a strongly typed implementation of ICollection.CopyTo.</Issue>
+          </Message>
+          <Message Id="Ghostscript" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Ghostscript' in type name 'GhostscriptSettings'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="PdfInfo" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AuthorData" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning">Change 'PdfInfo.AuthorData' to return a collection or make it a method.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CreationDateData" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning">Change 'PdfInfo.CreationDateData' to return a collection or make it a method.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CreatorData" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning">Change 'PdfInfo.CreatorData' to return a collection or make it a method.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Decode(System.Byte[])" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="c:\Users\nathanael\Documents\resizer\Contrib\PdfRenderer\PdfRenderer\Ghostscript" File="PdfInfo.cs" Line="107">The 'this' parameter (or 'Me' in Visual Basic) of 'PdfInfo.Decode(byte[])' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FileNameData" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning">Change 'PdfInfo.FileNameData' to return a collection or make it a method.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#KeywordsData" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning">Change 'PdfInfo.KeywordsData' to return a collection or make it a method.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ModifiedDateData" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning">Change 'PdfInfo.ModifiedDateData' to return a collection or make it a method.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ProducerData" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning">Change 'PdfInfo.ProducerData' to return a collection or make it a method.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SubjectData" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning">Change 'PdfInfo.SubjectData' to return a collection or make it a method.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TitleData" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Status="Active" Created="2014-05-08 15:44:50Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning">Change 'PdfInfo.TitleData' to return a collection or make it a method.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+   <Name>Assemblies should have valid strong names</Name>
+   <Description>Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).</Description>
+   <Resolution Name="NoStrongName">Sign {0} with a strong name key.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182127.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="AttributeStringLiteralsShouldParseCorrectly" Category="Microsoft.Usage" CheckId="CA2243">
+   <Name>Attribute string literals should parse correctly</Name>
+   <Description>Literal strings used as attribute parameters that represent URLs, version numbers, or GUIDs, should have the appropriate format.</Description>
+   <Resolution Name="Default">In the constructor of {0}, change the value of argument {1}, which is currently "{2}", to something that can be correctly parsed as {3}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264490.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="ComVisibleTypeBaseTypesShouldBeComVisible" Category="Microsoft.Interoperability" CheckId="CA1405">
+   <Name>COM visible type base types should be COM visible</Name>
+   <Description>COM visible types should have an object hierarchy that is uniformly COM visible.</Description>
+   <Resolution Name="Default">{0} is marked ComVisible(true) but has the following ComVisible(false) types in its object hierarchy: {1}</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182202.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="interoperabilityrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303">
+   <Name>Do not pass literals as localized parameters</Name>
+   <Description>Literal strings that are embedded in source code are difficult to localize. Avoid passing literal strings as arguments in circumstances where a localized string is generally expected.</Description>
+   <Resolution Name="KnownValue">Method {0} passes a literal string as parameter '{1}' of a call to {2}. Retrieve the following string(s) from a resource table instead: {3}.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182187.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122">
+   <Name>Do not indirectly expose methods with link demands</Name>
+   <Description>Do not wrap a method protected by a LinkDemand with a method that does not perform a security check. A LinkDemand checks the permissions of the immediate caller rather than checking the permissions of all callers in the call stack. In this case, the permissions of the wrapper method will be checked. If the wrapper method does not, itself, check the permissions of callers higher in the call stack, malicious code might be able to execute the wrapped function even though it lacks permission to do so.</Description>
+   <Resolution Name="Default">{0} calls into {1} which has a LinkDemand. By making this call, {1} is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: {2}</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182303.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="33">CriticalError</MessageLevel>
+   <File Name="securityrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="ICollectionImplementationsHaveStronglyTypedMembers" Category="Microsoft.Design" CheckId="CA1035">
+   <Name>ICollection implementations have strongly typed members</Name>
+   <Description>Types that implement ICollection should also provide a version of CopyTo with the first parameter set to a strong type, namely a type other than an array of objects or System.Array. Implement the interface member explicitly and make the strongly typed version public. It is safe to ignore violations of this rule when you are implementing a new object-based collection, such as a binary tree, where types based on your collection will determine what the strong type is. These types should expose strongly typed members.</Description>
+   <Resolution Name="Default">{0} should provide a strongly typed implementation of ICollection.CopyTo.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/49stb304.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+   <Name>Identifiers should be spelled correctly</Name>
+   <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+   <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Resolution Name="Namespace">Correct the spelling of '{0}' in namespace name '{1}'.</Resolution>
+   <Resolution Name="Type">Correct the spelling of '{0}' in type name {1}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264492.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="namingrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204">
+   <Name>Literals should be spelled correctly</Name>
+   <Description>This rule parses the literal string into words, tokenizing compound words, and checks the spelling of each word/token.</Description>
+   <Resolution Name="Default">Correct the spelling of the unrecognized token '{0}' in the literal '{1}'.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/bb264488.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Mark assemblies with CLSCompliantAttribute</Name>
+   <Description>Assemblies should explicitly state their CLS compliance using the CLSCompliant attribute. An assembly without this attribute is not CLS-compliant. Assemblies, modules, and types can be CLS-compliant even if some parts of the assembly, module, or type are not CLS-compliant. The following rules apply: 1) If the element is marked CLSCompliant, any noncompliant members must have the CLSCompliant attribute present with its argument set to false. 2) A comparable CLS-compliant alternative member must be supplied for each member that is not CLS-compliant.</Description>
+   <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182156.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017">
+   <Name>Mark assemblies with ComVisibleAttribute</Name>
+   <Description>The System.Runtime.InteropServices.ComVisible attribute indicates whether COM clients can use the library. Good design dictates that developers explicitly indicate COM visibility. The default value for this attribute is 'true'. However, the best design is to mark the assembly ComVisible false, and then mark types, interfaces, and individual members as ComVisible true, as appropriate.</Description>
+   <Resolution Name="NoAttribute">Because {0} exposes externally visible types, mark it with ComVisible(false) at the assembly level and then mark all types within the assembly that should be exposed to COM clients with ComVisible(true).</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182157.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError, Error</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+   <Name>Mark members as static</Name>
+   <Description>Methods which do not access instance data or call instance methods can be marked as static (Shared in Visual Basic). After doing so, the compiler will emit non-virtual call sites to these members which will prevent a check at runtime for each call that ensures the current object pointer is non-null. This can result in a measurable performance gain for performance-sensitive code. In some cases, the failure to access the current object instance represents a correctness issue.</Description>
+   <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245046.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="PInvokesShouldNotBeSafeCriticalFxCopRule" Category="Microsoft.Security" CheckId="CA5122">
+   <Name>P/Invoke declarations should not be safe-critical.</Name>
+   <Description>Since P/Invokes may not be called by transparent code, they should not be marked as safe-critical methods.  Doing so can lead to confusion on the part of developers who may believe that their transparent code should be able to call the P/Invoke method since it is marked safe-critical.</Description>
+   <Resolution Name="Default">P/Invoke method {0} is marked safe-critical.  Since P/Invokes may only be called by critical code, this declaration should either be marked as security critical, or have its annotation removed entirely to avoid being misleading.</Resolution>
+   <Owner />
+   <Email>[none]</Email>
+   <MessageLevel Certainty="50">Warning</MessageLevel>
+   <File Name="securitytransparencyrules.dll" Version="4.0.0.0" />
+  </Rule>
+  <Rule TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819">
+   <Name>Properties should not return arrays</Name>
+   <Description>Properties that return arrays are prone to code inefficiencies. Consider using a collection or making this a method. See the design guidelines for more information.</Description>
+   <Resolution Name="Default">Change {0} to return a collection or make it a method.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/0fss9skc.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="50">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062">
+   <Name>Validate arguments of public methods</Name>
+   <Description>All reference arguments passed to externally visible methods should be checked against null (Nothing in VB). If appropriate, throw a System.ArgumentNullException when the argument is null.</Description>
+   <Resolution Name="Default">In externally visible method {0}, validate parameter '{1}' before using it.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182182.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="12.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

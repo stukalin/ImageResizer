@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ImageResizer.Plugins.FFmpeg</name>
+    </assembly>
+    <members>
+        <member name="P:ImageResizer.Plugins.FFmpeg.FFmpegJob.SkipBlankFrames">
+            <summary>
+            If true, frames will be energy-anlayzed to verify they're not blank. 
+            </summary>
+        </member>
+        <member name="P:ImageResizer.Plugins.FFmpeg.FFmpegJob.IncrementWhenBlank">
+            <summary>
+            How many seconds to FF when a blank frame is found
+            </summary>
+        </member>
+        <member name="P:ImageResizer.Plugins.FFmpeg.FFmpegJob.Seconds">
+            <summary>
+            How many seconds within the video to grab the frame
+            </summary>
+        </member>
+        <member name="P:ImageResizer.Plugins.FFmpeg.FFmpegJob.Percent">
+            <summary>
+            What percentage within the video to grab a frame. Using this instead of seconds will result in slower execution, as the video size will have to be retrieved first.
+            </summary>
+        </member>
+        <member name="P:ImageResizer.Plugins.FFmpeg.FFmpegJob.Timeout">
+            <summary>
+            How many milliseconds to wait before timing out
+            </summary>
+        </member>
+        <member name="F:ImageResizer.Plugins.FFmpeg.FFmpegManager._concurrentExecutions">
+            <summary>
+            Number of executing CAIR.exe processes
+            </summary>
+        </member>
+        <member name="F:ImageResizer.Plugins.FFmpeg.FFmpegManager._concurrentWaitingThreads">
+            <summary>
+            Number of threads waiting for a CAIR.exe process.
+            </summary>
+        </member>
+        <member name="F:ImageResizer.Plugins.FFmpeg.FFmpegManager.turnstile">
+            <summary>
+            Used for efficient thread waiting
+            </summary>
+        </member>
+        <member name="M:ImageResizer.Plugins.FFmpeg.FFmpegManager.IsBlank(System.Byte[],System.Byte)">
+            <summary>
+            Returns true if the average energy of the image is below the given threshold
+            </summary>
+            <param name="image"></param>
+            <param name="threshold"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.FFmpeg.FFmpegPlugin.FileExists(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns true if the specified file and querystring indicate a PSD composition request
+            </summary>
+            <param name="virtualPath"></param>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.FFmpeg.FFmpegPlugin.GetFile(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns a virtual file instance for the specified specified file and querystring, if they indicate a PSD composition request. 
+            Otherwise, null is returned.
+            </summary>
+            <param name="virtualPath"></param>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.FFmpeg.FFmpegPlugin.IsPathVideoFileWithOurCommands(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            True if the file is a .psd.jpeg, .psd.png, etc file.
+            </summary>
+        </member>
+        <member name="M:ImageResizer.Plugins.FFmpeg.FFmpegVirtualFile.Open">
+            <summary>
+            Returns a stream of the encoded file bitmap using the current request querystring.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ImageResizer.Plugins.FFmpeg.FFmpegVirtualFile.Exists">
+            <summary>
+            Returns true if the row exists. 
+            </summary>
+        </member>
+    </members>
+</doc>

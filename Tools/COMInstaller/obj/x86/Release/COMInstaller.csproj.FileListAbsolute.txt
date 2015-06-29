@@ -1,0 +1,8 @@
+C:\Users\nathanael\Documents\resizer\dlls\release\COMInstaller.exe
+C:\Users\nathanael\Documents\resizer\dlls\release\COMInstaller.pdb
+C:\Users\nathanael\Documents\resizer\Tools\COMInstaller\obj\x86\Release\COMInstaller.csprojResolveAssemblyReference.cache
+C:\Users\nathanael\Documents\resizer\Tools\COMInstaller\obj\x86\Release\COMInstaller.Main.resources
+C:\Users\nathanael\Documents\resizer\Tools\COMInstaller\obj\x86\Release\COMInstaller.Properties.Resources.resources
+C:\Users\nathanael\Documents\resizer\Tools\COMInstaller\obj\x86\Release\COMInstaller.csproj.GenerateResource.Cache
+C:\Users\nathanael\Documents\resizer\Tools\COMInstaller\obj\x86\Release\COMInstaller.exe
+C:\Users\nathanael\Documents\resizer\Tools\COMInstaller\obj\x86\Release\COMInstaller.pdb
