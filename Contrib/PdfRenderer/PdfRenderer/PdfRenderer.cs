@@ -57,17 +57,6 @@ namespace ImageResizer.Plugins.PdfRenderer
                                                                     ".pdf"
                                                                 };
         private static readonly XmlSerializer _pdfInfoSerializer = new XmlSerializer(typeof(PdfInfo));
-        private static string _pdfInfoPath = null;
-        /// <summary>
-        ///
-        /// </summary>
-        private static string PdfInfoPath {
-            get {
-                if (_pdfInfoPath == null)  _pdfInfoPath = GetPathInfoResource();
-                return _pdfInfoPath;
-            }
-        }
-
 
         //TODO: needs to be static, it's process-wide
         private readonly GhostscriptEngine _engine = new GhostscriptEngine();
@@ -371,14 +360,25 @@ namespace ImageResizer.Plugins.PdfRenderer
         private PdfInfo GetPdfInfo(string path)
         {
             string output;
+            string pdfInfoPath = GetPathInfoResource();
             GhostscriptSettings settings = new GhostscriptSettings
                                            {
                                                GhostscriptArgument.NoDisplay,
                                                GhostscriptArgument.Quiet,
-                                               {GhostscriptArgument.File, path},
-                                               PdfInfoPath
+                                               { GhostscriptArgument.File, path },
+                                               pdfInfoPath
                                            };
             output = _engine.Execute(settings);
+
+            try
+            {
+                // remove temporary file
+                File.Delete(pdfInfoPath);
+            }
+            catch
+            {  
+                // ok, it's 4 Kb in the temp folder, not a big deal
+            }
 
             // Deserialize PDF info output from XML
             using(StringReader outputReader = new StringReader(output))
@@ -389,8 +389,6 @@ namespace ImageResizer.Plugins.PdfRenderer
 
         private static string GetPathInfoResource()
         {
-            // TODO: Temp file is not deleted
-
             // Extract pdfInfo.ps file from embedded resource for when getting PDF information
             Assembly assembly = Assembly.GetExecutingAssembly();
             string resourceName = assembly.GetManifestResourceNames().Single(x => x.EndsWith("pdfInfo.ps", StringComparison.OrdinalIgnoreCase));

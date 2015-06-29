@@ -248,11 +248,6 @@
               Ghostscript image resizer decoder capable of rendering postscript-based files to bitmaps.
             </summary>
         </member>
-        <member name="P:ImageResizer.Plugins.PdfRenderer.PdfRendererPlugin.PdfInfoPath">
-             <summary>
-            
-             </summary>
-        </member>
         <member name="P:ImageResizer.Plugins.PdfRenderer.PdfRendererPlugin.MaxHeight">
             <summary>
               Gets or sets maximum height in pixels for rendered output.

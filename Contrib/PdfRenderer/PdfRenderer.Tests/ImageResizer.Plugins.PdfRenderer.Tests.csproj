@@ -31,9 +31,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gallio, Version=3.3.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL" />
-    <Reference Include="Gallio35, Version=3.3.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL" />
-    <Reference Include="MbUnit, Version=3.3.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL" />
+    <Reference Include="Gallio">
+      <HintPath>..\packages\mbunit.3.4.14.0\lib\net35\Gallio.dll</HintPath>
+    </Reference>
+    <Reference Include="Gallio35">
+      <HintPath>..\packages\mbunit.3.4.14.0\lib\net35\Gallio35.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit">
+      <HintPath>..\packages\mbunit.3.4.14.0\lib\net35\MbUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit35">
+      <HintPath>..\packages\mbunit.3.4.14.0\lib\net35\MbUnit35.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -59,6 +68,9 @@
       <Project>{7C8A13F7-5C00-4074-B16E-45D0E231B70D}</Project>
       <Name>ImageResizer.Plugins.Pdf</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

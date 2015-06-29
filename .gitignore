@@ -1,1 +1,8 @@
 Contrib/PdfRenderer/_ReSharper.Caches/
+Contrib/PdfRenderer/PdfRenderer.Tests/obj/
+Contrib/PdfRenderer/PdfRenderer.Web/obj/
+Contrib/PdfRenderer/packages/
+Tests/binaries/
+Contrib/PdfRenderer/PdfRenderer.Web/bin/
+Contrib/PdfRenderer/PdfRenderer/obj/
+Core/obj/
