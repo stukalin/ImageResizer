@@ -92,31 +92,43 @@ namespace ImageResizer.Plugins.PdfRenderer.Ghostscript
             GhostscriptMessageEventHandler inputHandler = (i, s, l) => l;
 
             // NOTE: Ghostscript supports only one instance per process
-            int result;
+
+            //9999 is not a known result code
+            int result = 9999;
             lock(_syncObject)
             {
                 // Create a new instance of Ghostscript. This instance is passed to most other gsapi functions. 
                 // The caller_handle will be provided to callback functions. 
                 IntPtr instance;
+
                 GhostscriptNativeMethods.NewInstance(out instance, IntPtr.Zero);
 
-                // Set the callback functions for stdio.
-                GhostscriptNativeMethods.SetMessageHandlers(instance, inputHandler, outputHandler, errorHandler);
+                //Catch any exception and then exit Ghostscript. Errors output below.
+                try
+                {
+                    // Set the callback functions for stdio.
+                    GhostscriptNativeMethods.SetMessageHandlers(instance, inputHandler, outputHandler, errorHandler);
 
-                // Initialise the interpreter. 
-                // This calls gs_main_init_with_args() in imainarg.c. See below for return codes. 
-                // The arguments are the same as the "C" main function: argv[0] is ignored and the user supplied arguments are 
-                // argv[1] to argv[argc-1].
-                result = GhostscriptNativeMethods.InitializeWithArguments(instance, arguments.Length, arguments);
+                    // Initialise the interpreter. 
+                    // This calls gs_main_init_with_args() in imainarg.c. See below for return codes. 
+                    // The arguments are the same as the "C" main function: argv[0] is ignored and the user supplied arguments are 
+                    // argv[1] to argv[argc-1].
+                    result = GhostscriptNativeMethods.InitializeWithArguments(instance, arguments.Length, arguments);
+                }
+                catch (Exception)
+                {
+                }
+                finally
+                {
+                    // Exit the interpreter. 
+                    // This must be called on shutdown if gsapi_init_with_args() has been called, and just before gsapi_delete_instance().
+                    GhostscriptNativeMethods.Exit(instance);
 
-                // Exit the interpreter. 
-                // This must be called on shutdown if gsapi_init_with_args() has been called, and just before gsapi_delete_instance().
-                GhostscriptNativeMethods.Exit(instance);
-
-                // Destroy an instance of Ghostscript. 
-                // Before you call this, Ghostscript must have finished. 
-                // If Ghostscript has been initialised, you must call gsapi_exit before gsapi_delete_instance.
-                GhostscriptNativeMethods.DeleteInstance(instance);
+                    // Destroy an instance of Ghostscript. 
+                    // Before you call this, Ghostscript must have finished. 
+                    // If Ghostscript has been initialised, you must call gsapi_exit before gsapi_delete_instance.
+                    GhostscriptNativeMethods.DeleteInstance(instance);
+                }
             }
 
             // Check for errors. Zero and e_Quit(-101) are not errors.
@@ -133,6 +145,8 @@ namespace ImageResizer.Plugins.PdfRenderer.Ghostscript
                 GhostscriptException exception = new GhostscriptException(output);
                 exception.Data["args"] = arguments;
                 exception.Data["stderr"] = error;
+                exception.Data["resultCode"] = result;
+                exception.Data["output"] = output;
                 throw exception;
             }
 
